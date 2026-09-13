@@ -1,0 +1,22 @@
+# Visual Studio 生成产物与缓存
+.vs/
+x64/
+x86/
+Debug/
+Release/
+ipch/
+
+# VS 用户配置文件
+*.user
+*.suo
+*.sln.docstates
+
+# 编译中间产物
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.idb
+*.log
+*.tlog
+*.pch
