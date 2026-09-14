@@ -20,3 +20,6 @@ ipch/
 *.log
 *.tlog
 *.pch
+
+# Obsidian 本地配置
+.obsidian/
