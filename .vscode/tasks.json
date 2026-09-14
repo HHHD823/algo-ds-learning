@@ -1,0 +1,79 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译当前 C 文件",
+            "type": "cppbuild",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-static",
+                "${fileBasename}",
+                "-o",
+                "${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译当前打开的 .c 文件（快捷键 Ctrl+Shift+B）"
+        },
+        {
+            "label": "编译并运行当前 C 文件",
+            "type": "shell",
+            "command": "gcc -g -Wall -static \"${fileBasename}\" -o \"${fileBasenameNoExtension}.exe\" && .\\${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译后直接运行（终端里看输出）"
+        },
+        {
+            "label": "编译当前 C++ 文件",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-std=c++17",
+                "-static",
+                "${fileBasename}",
+                "-o",
+                "${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译当前打开的 .cpp 文件"
+        },
+        {
+            "label": "编译本文件夹全部 C 文件（多文件项目）",
+            "type": "shell",
+            "command": "gcc -g -Wall -static *.c -o app.exe",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "适合 main.c + ArrayList.c 这种多文件项目"
+        }
+    ]
+}
